@@ -1,6 +1,6 @@
 (function () {
-    let NebPay = require("nebpay");
-    let nebPay = new NebPay();
+    var NebPay = require("nebpay");
+    var nebPay = new NebPay();
 
     $(function () {
         if (typeof(webExtensionWallet) === "undefined") {
@@ -8,12 +8,12 @@
         }
     });
 
-    let dappAddress = "";
+    var dappAddress = "";
 
     // add
     function add() {
-        let to = dappAddress;
-        let value = "0";
+        var to = dappAddress;
+        var value = "0";
         // let callFunction = "";
         // let callArgs = "";
         nebPay.call(to, value, callFuntion, callArgs, {
@@ -27,8 +27,8 @@
 
     // get
     function get() {
-        let to = dappAddress;
-        let value = "0";
+        var to = dappAddress;
+        var value = "0";
         // let callFunction = "";
         // let callArgs = "";
         nebPay.simulateCall(to, value, callFunction, callArgs, {

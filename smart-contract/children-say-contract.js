@@ -2,9 +2,9 @@
 
 // item of children-say
 
-let ChildrenSayItem = function (text) {
+var ChildrenSayItem = function (text) {
     if (text) {
-        let obj = JSON.parse(text);
+        var obj = JSON.parse(text);
         // todo
     } else {
         // todo
@@ -19,7 +19,7 @@ ChildrenSayItem.prototype = {
 
 // core actions of children-say
 
-let ChildrenSay = function () {
+var ChildrenSay = function () {
     LocalContractStorage.defineMapProperty(this, "walletContents");
     LocalContractStorage.defineMapProperty(this, "essenceContents", {
         parse: function (text) {
