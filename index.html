@@ -17,42 +17,63 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed"
-                        data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="sr-only"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand">孩说</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right inventory-list-nav">
-                    <li><a href="say.html">说过</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right history-nav">
-                    <li><a href="said.html">说了</a></li>
-                </ul>
             </div>
         </div>
     </nav>
 
-    <div>
-        请先安装 <a href="https://github.com/ChengOrangeJu/WebExtensionWallet"> WebExtensionWallet </a> 再使用
-    </div>
+    <div class="container">
+        <div class="alert alert-warning" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            请先安装 <a href="https://github.com/ChengOrangeJu/WebExtensionWallet"> WebExtensionWallet </a> 再使用
+        </div>
 
-    <form>
-        <div class="form-group">
-            <label for="form-address">地址</label>
-            <input type="text" id="form-address" class="form-control" placeholder="钱包地址">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+            <li class="active" id="liSay"><a href="#say" data-toggle="tab"><span
+                    class="glyphicon glyphicon-pencil"></span> 说了</a></li>
+            <li id="liSaid"><a href="#said" data-toggle="tab"><span
+                    class="glyphicon glyphicon-book"></span> 说过</a></li>
+        </ul>
+
+        <!-- Tab Panes -->
+        <div class="tab-content">
+            <div class="tab-pane active" id="say">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="form-address">地址</label>
+                                <input type="text" id="form-address" class="form-control" placeholder="n1d6Ycs7JVkqCGDfphowQiRAHbXHzWKqKQB">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-content">说了什么</label>
+                                <textarea id="form-content" class="form-control" rows="5"></textarea>
+                            </div>
+                            <button type="button" id="form-submit" class="btn">提交</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane text-center" id="said">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label for="form-search">地址</label>
+                                <input type="text" id="form-search" class="form-control" placeholder="n1d6Ycs7JVkqCGDfphowQiRAHbXHzWKqKQB">
+                            </div>
+                            <button type="button" class="btn">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="form-content">说了什么</label>
-            <textarea id="form-content" class="form-control" rows="5"></textarea>
-        </div>
-        <button type="button" id="form-submit" class="btn">提交</button>
-    </form>
+    </div>
 
     <script src="lib/js/nebPay.js"></script>
     <script src="lib/js/nebulas.js"></script>
