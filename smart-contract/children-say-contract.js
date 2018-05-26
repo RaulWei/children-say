@@ -65,7 +65,7 @@ ChildrenSay.prototype = {
         var index = this.count;
         this.essenceContents.put(index, childrenSayItem);
         var walletContents = this.walletContents.get(from) || [];
-        walletContents.put(index);
+        walletContents.push(index);
         this.walletContents.put(from, walletContents);
 
         this.count = new BigNumber(index).plus(1);
