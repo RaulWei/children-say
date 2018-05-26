@@ -23,7 +23,7 @@
     </nav>
 
     <div class="container">
-        <div class="alert alert-warning" role="alert">
+        <div class="alert alert-warning noWebExtensionWallet" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -45,14 +45,14 @@
                     <div class="panel-body">
                         <form>
                             <div class="form-group">
-                                <label for="form-address">谁</label>
-                                <input type="text" id="form-address" class="form-control" placeholder="用钱包地址标记，如n1d6Ycs7JVkqCGDfphowQiRAHbXHzWKqKQB">
+                                <label for="form-address">身份标识</label>
+                                <input type="text" id="form-address" class="form-control" placeholder="建议用钱包地址标记，如n1d6Ycs7JVkqCGDfphowQiRAHbXHzWKqKQB">
                             </div>
                             <div class="form-group">
-                                <label for="form-content">说了什么</label>
+                                <label for="form-content">内容</label>
                                 <textarea id="form-content" class="form-control" rows="5"></textarea>
                             </div>
-                            <button type="button" id="form-submit" class="btn">提交</button>
+                            <button type="button" id="submit-say" class="btn">提交</button>
                         </form>
                     </div>
                 </div>
@@ -63,36 +63,42 @@
                         <form class="form-inline text-center">
                             <div class="form-group">
                                 <label for="form-search">身份标识</label>
-                                <input type="text" id="form-search" class="form-control" placeholder="如n1d6Ycs7JVkqCGDfphowQiRAHbXHzWKqKQB">
+                                <input type="text" id="form-search" class="form-control" placeholder="n1d6Ycs7JVkqCGDfphowQiRAHbXHzWKqKQB">
                             </div>
-                            <button type="button" class="btn">
+                            <button type="button" id="submit-said" class="btn">
                                 <span class="glyphicon glyphicon-search"></span>
                             </button>
                         </form>
-                        <!-- item -->
-                        <div class="media">
-                            <hr>
-                            <div class="media-body">
-                                <div class="media-heading">
-                                    <span class="glyphicon glyphicon-time"></span> 2018.05.23 22:39:05
-                                </div>
-                                闷声大发财
-                            </div>
-                        </div>
-                        <!-- item -->
-                        <div class="media">
-                            <hr>
-                            <div class="media-body">
-                                <div class="media-heading">
-                                    <span class="glyphicon glyphicon-time"></span> 2018.05.24 22:39:05
-                                </div>
-                                一个人的命运啊，当然要靠自我奋斗，但是也要考虑到历史的行程
-                            </div>
+                        <!-- items -->
+                        <div id="items">
+                            <!-- filled by js -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Alert Modal -->
+        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="alert-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title text-center"></h4>
+                    </div>
+                    <div class="modal-body text-center"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center">
+            <div class="container">
+                <p>Copyright &copy; n1d6Ycs7JVkqCGDfphowQiRAHbXHzWKqKQB</p>
+                <p></p>
+            </div>
+        </footer>
     </div>
 
     <script src="lib/js/nebPay.js"></script>
