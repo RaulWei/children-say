@@ -4,7 +4,8 @@
     var NebPay = require("nebpay");
     var nebPay = new NebPay();
 
-    var dappAddress = "n1pL1YFCiYtfjvZwBxMh1YYU5qv3DGFY5Jk";
+    var dappAddress = "n1ptLwCEn8Areh9c9m7nvx6Qqspxn63Q1dQ";
+    var callbackUrl = NebPay.config.mainnetUrl;
 
     function showAlertModal(titleContent, bodyContent) {
         var alertModal = $('#alert-modal');
@@ -26,7 +27,8 @@
         var callFunction = "add";
         var callArgs = "[\"" + author + "\",\"" + dateTime + "\",\"" + content + "\"]";
         serialNumber = nebPay.call(to, value, callFunction, callArgs, {
-            listener: cbAdd
+            listener: cbAdd,
+            callback: callbackUrl
         });
     }
     function cbAdd(resp) {
@@ -37,10 +39,13 @@
         // handle result
         interval = setInterval(function () {
             fetchResult();
-        }, 5000);
+        }, 10000);
     }
     function fetchResult() {
-        nebPay.queryPayInfo(serialNumber)
+        var options = {
+            callback: callbackUrl
+        };
+        nebPay.queryPayInfo(serialNumber, options)
             .then(function (resp) {
                 console.log("tx result: " + resp);
                 var respObject = JSON.parse(resp);
