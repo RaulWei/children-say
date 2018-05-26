@@ -78,7 +78,7 @@ ChildrenSay.prototype = {
         }
         var walletContents = this.walletContents.get(from);
         if (!walletContents) {
-            throw new Error("Failed to get contents from wallet = ${from}.");
+            throw new Error("Failed to get contents from wallet = " + from + ".");
         }
         var res = [];
         for (var i = 0; i < walletContents.length; i++) {
