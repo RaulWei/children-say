@@ -109,6 +109,12 @@
         if (typeof(webExtensionWallet) === "undefined") {
             walletExtension.show();
         }
+        var noChrome = $(".noChrome");
+        noChrome.hide();
+        var isChrome = !!window.chrome;
+        if (!isChrome) {
+            noChrome.show();
+        }
 
         // event listener
         $("#submit-say").off("click").on("click", function() {
