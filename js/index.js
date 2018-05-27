@@ -37,7 +37,7 @@
         $("#form-address").val("");
         $("#form-content").val("");
         // handle result
-        interval = setInterval(function () {
+        interval = setInterval(function() {
             fetchResult();
         }, 10000);
     }
@@ -46,17 +46,16 @@
             callback: callbackUrl
         };
         nebPay.queryPayInfo(serialNumber, options)
-            .then(function (resp) {
+            .then(function(resp) {
                 console.log("tx result: " + resp);
                 var respObject = JSON.parse(resp);
-                if(respObject.code === 0 && respObject.msg === "success"){
-                    showAlertModal("<span class='glyphicon glyphicon-ok'></span> 成功",
-                        "已将记录写入！");
+                if (respObject.code === 0 && respObject.msg === "success") {
+                    showAlertModal("<span class='glyphicon glyphicon-ok'></span> 成功", "已将记录写入！");
                     $("#submit-say").prop("disabled", false);
                     clearInterval(interval);
                 }
             })
-            .catch(function (err) {
+            .catch(function(err) {
                 console.log(err);
                 $("#submit-say").prop("disabled", false);
                 clearInterval(interval);
@@ -82,8 +81,7 @@
 
         // get fail
         if (resp.execute_err !== "") {
-            showAlertModal("<span class='glyphicon glyphicon-remove'></span> 失败",
-                "未能查询到相关结果！");
+            showAlertModal("<span class='glyphicon glyphicon-remove'></span> 失败", "未能查询到相关结果！");
             return;
         }
         // get success
