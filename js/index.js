@@ -25,7 +25,7 @@
         var to = dappAddress;
         var value = "0";
         var callFunction = "add";
-        var callArgs = "[\"" + author + "\",\"" + dateTime + "\",\"" + content + "\"]";
+        var callArgs = JSON.stringify([author, dateTime, content]);
         serialNumber = nebPay.call(to, value, callFunction, callArgs, {
             listener: cbAdd,
             callback: callbackUrl
@@ -96,7 +96,7 @@
             var content = items[i].content;
             var media = $("<div class='media'><hr></div>");
             var mediaBody = $("<div class='media-body'><div class='media-heading'><span class='glyphicon glyphicon-time'></span> "
-                + dateTime + "</div>" + content + "</div>");
+                + dateTime + "</div><pre>" + content + "</pre></div>");
             media.append(mediaBody);
             container.append(media);
         }
