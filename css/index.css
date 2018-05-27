@@ -6,8 +6,6 @@
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
-
-/* id */
-#form-search {
-    min-width: 350px;
+footer p {
+    word-wrap: break-word;
 }
